@@ -1,0 +1,254 @@
+.App {
+  min-height: 100vh;
+  background-color: #FAFAFA;
+}
+
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  color: #212121;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #F0F8FF;
+  color: #2196F3;
+}
+
+.nav-link.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+
+/* Notification Bell */
+.notification-wrapper {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.notification-bell {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.notification-bell:hover {
+  transform: scale(1.1);
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #F44336;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.notification-header {
+  padding: 1rem;
+  background: #2196F3;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.notification-count {
+  background: rgba(255,255,255,0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.notification-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.notification-empty p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.notification-empty small {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.notification-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  display: block;
+  padding: 1rem;
+  border-bottom: 1px solid #E0E0E0;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+
+.notification-item:hover {
+  background: #F5F5F5;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.notification-symbol {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #212121;
+}
+
+.notification-timeframe {
+  background: #E3F2FD;
+  color: #1976D2;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.notification-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.notification-prices {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.notification-label {
+  color: #666;
+}
+
+.notification-value {
+  font-weight: 600;
+  color: #212121;
+}
+
+.notification-value.current {
+  color: #F44336;
+}
+
+.notification-item-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.notification-percent {
+  background: #FFEBEE;
+  color: #F44336;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .notification-dropdown {
+    width: 300px;
+    right: -50px;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+  }
+  
+  .notification-wrapper {
+    margin-left: 0.5rem;
+  }
+}
